@@ -21,12 +21,15 @@ class UsersRepository {
     console.log(contents);
 
     // parse the contents
+    const data = JSON.parse(contents);
 
     // return the parsed data
+    return data;
   }
 }
 
 const test = async () => {
   const repo = new UsersRepository('users.json');
-  await repo.getAll();
+  const users = await repo.getAll();
+  console.log(users);
 };
